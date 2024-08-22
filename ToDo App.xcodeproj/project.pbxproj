@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		06B7DB0E2C7425A3005A786C /* ToDo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7DB0D2C7425A3005A786C /* ToDo_AppApp.swift */; };
 		06B7DB102C7425A3005A786C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7DB0F2C7425A3005A786C /* ContentView.swift */; };
-		06B7DB122C7425A3005A786C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7DB112C7425A3005A786C /* Item.swift */; };
 		06B7DB142C7425A4005A786C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B7DB132C7425A4005A786C /* Assets.xcassets */; };
 		06B7DB172C7425A4005A786C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B7DB162C7425A4005A786C /* Preview Assets.xcassets */; };
 		06B7DB1F2C742705005A786C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7DB1E2C742705005A786C /* Task.swift */; };
@@ -19,7 +18,6 @@
 		06B7DB0A2C7425A3005A786C /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B7DB0D2C7425A3005A786C /* ToDo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_AppApp.swift; sourceTree = "<group>"; };
 		06B7DB0F2C7425A3005A786C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		06B7DB112C7425A3005A786C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		06B7DB132C7425A4005A786C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06B7DB162C7425A4005A786C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		06B7DB1E2C742705005A786C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 				06B7DB1D2C7426F0005A786C /* Model */,
 				06B7DB0D2C7425A3005A786C /* ToDo_AppApp.swift */,
 				06B7DB0F2C7425A3005A786C /* ContentView.swift */,
-				06B7DB112C7425A3005A786C /* Item.swift */,
 				06B7DB132C7425A4005A786C /* Assets.xcassets */,
 				06B7DB152C7425A4005A786C /* Preview Content */,
 			);
@@ -153,7 +150,6 @@
 			files = (
 				06B7DB1F2C742705005A786C /* Task.swift in Sources */,
 				06B7DB102C7425A3005A786C /* ContentView.swift in Sources */,
-				06B7DB122C7425A3005A786C /* Item.swift in Sources */,
 				06B7DB0E2C7425A3005A786C /* ToDo_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
