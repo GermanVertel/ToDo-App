@@ -45,6 +45,7 @@ struct ContentView: View {
                 List{
                     ForEach(self.tasks) { task in
                         //TODO: Representar la tarea en una fila
+                        TaskCell(task: task)
                         
                     }
                 }
@@ -60,6 +61,7 @@ struct ContentView: View {
                 
                 if self.tasks.count == 0 {
                     //TODO: CREAR VISTA VACIA
+                    NoTaskView()
                 }
                 
                 if self.showNewTask {
@@ -71,9 +73,75 @@ struct ContentView: View {
     }
     
 }
-    
+
+
 
 #Preview {
     ContentView()
+}
+
+struct NoTaskView: View {
+    var body: some View {
+        VStack {
+            Image("welcome")
+                .resizable()
+                .scaledToFit()
+            
+            Text("No hay tareas para mostrar aun, puedes crear una utilizando el boton + de la parte superior")
+                .font(.system(.headline, design: .rounded))
+                .padding()
+            Spacer()
+        }
+    }
+}
+
+#Preview("No task") {
+    NoTaskView()
        
+}
+
+
+
+//MARK: DISEÑO DE NUESTRA TAREA
+struct TaskCell: View {
+    @Bindable var task: Task
+    var body: some View {
+        Toggle(isOn: self.$task.isCompleted) {
+            HStack {
+                Text(self.task.title)
+                    .strikethrough(self.task.isCompleted, color: .teal)
+                    .bold()
+                .animation(.default)
+                Spacer()
+                Circle()
+                    .frame(width: 24, height: 24)
+                    .foregroundStyle(self.task.priority.color())
+            }
+            
+        }
+        .toggleStyle(checkboxstyle())
+        
+        
+    }
+}
+
+struct checkboxstyle: ToggleStyle{
+    func makeBody(configuration: Configuration) -> some View {
+        return HStack{
+            Image(systemName: configuration.isOn ? "checkmark.circle" : "circle")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundStyle(configuration.isOn ? .teal : .gray)
+                .font(.system(size: 24, weight: .bold,design: .rounded))
+                .onTapGesture {
+                    configuration.isOn.toggle()
+                }
+            configuration.label
+        }
+    }
+}
+
+
+#Preview("celda"){
+    TaskCell(task: Task(title: "Prueba de la previe", priority: .hight))
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Priority: Int {
     case low = 1
@@ -22,6 +23,19 @@ enum Priority: Int {
             return "Alta "
         }
     }
+    
+    
+    func color() -> Color{
+        switch self {
+        case .low:
+            return .green
+        case .normal:
+            return .yellow
+        case .hight:
+            return .red
+        }
+    }
+    
 }
 
 @Observable class Task: Identifiable{
