@@ -17,7 +17,6 @@ struct ContentView: View {
     
     @State private var newTaskTitle: String = ""
     @State private var newTaskPriority: Priority = .normal
-    
     @State private var showNewTask = false
 
     var body: some View {
@@ -55,14 +54,18 @@ struct ContentView: View {
                 .offset(y: self.showNewTask ? -40 : 0)
                 .animation(.easeInOut, value: self.showNewTask)
                 //CUANDO APAREZCA
+                
                 .onAppear{
                     UITableView.appearance().separatorColor = .clear
                 }
+                 
                 
-                if self.tasks.count == 0 {
+               if self.tasks.count == 0 {
                     //TODO: CREAR VISTA VACIA
                     NoTaskView()
+                  
                 }
+               
                 
                 if self.showNewTask {
                     //TODO: CREAR EL FORMULARIO PARA UNA NUEVA TAREA
@@ -71,6 +74,9 @@ struct ContentView: View {
                         .onTapGesture {
                             self.showNewTask = false
                         }
+                    
+                    NewTaskView(isShow: self.$showNewTask, tasks: self.$tasks, title: "", priority: .normal).transition(.move(edge: .bottom))
+                        .animation(.interpolatingSpring(stiffness: 100.0, damping: 20.0, initialVelocity: 12.0), value: self.showNewTask)
                 }
             }
         }
@@ -91,7 +97,8 @@ struct NoTaskView: View {
         VStack {
             Image("welcome")
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
+                .frame(width: 250, height: 250)
             
             Text("No hay tareas para mostrar aun, puedes crear una utilizando el boton + de la parte superior")
                 .font(.system(.headline, design: .rounded))
