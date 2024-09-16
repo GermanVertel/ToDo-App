@@ -66,6 +66,11 @@ struct ContentView: View {
                 
                 if self.showNewTask {
                     //TODO: CREAR EL FORMULARIO PARA UNA NUEVA TAREA
+                    BlackView(backgroundColor: .teal)
+                        .opacity(0.4)
+                        .onTapGesture {
+                            self.showNewTask = false
+                        }
                 }
             }
         }
@@ -80,6 +85,7 @@ struct ContentView: View {
     ContentView()
 }
 
+//MARK: VISTA VACIA CUANDO NO HAY TAREAS
 struct NoTaskView: View {
     var body: some View {
         VStack {
@@ -144,4 +150,18 @@ struct checkboxstyle: ToggleStyle{
 
 #Preview("celda"){
     TaskCell(task: Task(title: "Prueba de la previe", priority: .hight))
+}
+
+struct BlackView: View {
+    
+    var backgroundColor: Color
+    
+    var body: some View {
+        VStack{
+            Spacer()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(self.backgroundColor)
+        .edgesIgnoringSafeArea(.all)
+    }
 }
